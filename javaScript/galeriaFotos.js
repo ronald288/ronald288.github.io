@@ -22,7 +22,7 @@ contenedor.remove();
 const contenedorMiniatura = document.querySelector(".contenedorMiniaturas");
 const contenedorFotoPrincipal = document.querySelector(".contenedorGaleria");
 
-const imagenes=['pic1.png','pic2.jpg','pic3.jpg','pic4.jpg'];
+const imagenes=['pic1.png','pic2.jpeg','pic3.jpg','pic4.jpg'];
 
 for(i=0; i<imagenes.length; i++){
     let nombreImagenes = imagenes[i];
