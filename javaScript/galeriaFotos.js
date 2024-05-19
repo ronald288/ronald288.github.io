@@ -4,7 +4,7 @@ eventoGaleria.addEventListener("click", crearGaleria);
 
 
 function crearGaleria(){
-    var fondoNegro = document.createElement("div");
+    let fondoNegro = document.createElement("div");
     fondoNegro.style.backgroundColor ="rgba(0,0,0,0.7)";
     fondoNegro.style.width = window.innerWidth+"px";
     fondoNegro.style.height = "335vh";
