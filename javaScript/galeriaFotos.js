@@ -1,47 +1,89 @@
-const eventoGaleria= document.querySelector(".section1-head__img");
-eventoGaleria.addEventListener("click",crearGaleria);
+document.addEventListener("DOMContentLoaded",()=>{
+const eventoGaleria = document.querySelector(".Galeria");
+eventoGaleria.addEventListener("click", crearGaleria);
+
 
 function crearGaleria(){
-const contenedor= document.createElement("div");
-contenedor.classList.add("contenedorGaleria");
-document.body.appendChild(contenedor);
+    var fondoNegro = document.createElement("div");
+    fondoNegro.style.backgroundColor ="rgba(0,0,0,0.7)";
+    fondoNegro.style.width = window.innerWidth+"px";
+    fondoNegro.style.height = "335vh";
+    fondoNegro.style.position="absolute";
+    fondoNegro.style.top = 0;
+    document.body.appendChild(fondoNegro);
 
-const contenedorMiniaturas= document.createElement("div");
-contenedorMiniaturas.classList.add("contenedorMiniaturas");
-contenedor.appendChild(contenedorMiniaturas);
+    const contenedor = document.createElement("div");
+    contenedor.classList.add("contenedorGaleria");
+    document.body.appendChild(contenedor);
 
-const botonCerrar= document.createElement("botton");
-botonCerrar.classList.add("botonCerrar");
-botonCerrar.textContent="X";
-contenedor.appendChild(botonCerrar);
+    const contenedorMiniaturas = document.createElement("div");
+    contenedorMiniaturas.classList.add("contenedorMiniaturas");
+    contenedor.appendChild(contenedorMiniaturas);
 
-botonCerrar.addEventListener("click",()=>{
-contenedor.remove();
-});
+    const botonCerrar = document.createElement("button");
+    botonCerrar.classList.add("botonCerrar");
+    botonCerrar.textContent = "X";
+    contenedor.appendChild(botonCerrar);
 
-const contenedorMiniatura = document.querySelector(".contenedorMiniaturas");
-const contenedorFotoPrincipal = document.querySelector(".contenedorGaleria");
+    botonCerrar.addEventListener("click", () => {
+    contenedor.remove();
+    fondoNegro.remove();
+    });
 
-const imagenes=['pic1.png','pic2.jpeg','pic3.jpg','pic4.jpg'];
+    const contenedorFotoPrincipal = document.createElement("div");
+    contenedorFotoPrincipal.classList.add("fotoPrincipalGaleria");
+    contenedor.appendChild(contenedorFotoPrincipal);
 
-for(i=0; i<imagenes.length; i++){
-    let nombreImagenes = imagenes[i];
-    let rutaImagenes = "assets/img/images/"+ nombreImagenes;
-    const imagenesMiniatura= document.createElement("img");
-    imagenesMiniatura.setAttribute('src',rutaImagenes);
-    imagenesMiniatura.classList.add('imagenesMiniatura');
-    contenedorMiniatura.appendChild(imagenesMiniatura);
-};
+let fotoPrincipal = null;
+const imagenes=['pic1.png','pic2.jpeg','pic3.mp4'];
 
-contenedorMiniatura.addEventListener("click", (event) => {
-    if (event.target.tagName === 'IMG') {
-      fotoPrincipal.src = event.target.src;
+for (let i = 0; i < imagenes.length; i++) {
+  let nombreImagen = imagenes[i];
+  let rutaImagen = "assets/img/images/" + nombreImagen;
+  if (nombreImagen.endsWith('.mp4')) {
+      const videoMiniatura = document.createElement("video");
+      videoMiniatura.setAttribute("src", rutaImagen);
+      videoMiniatura.setAttribute("controls", true);
+      videoMiniatura.classList.add('videoMiniatura');
+      contenedorMiniaturas.appendChild(videoMiniatura);
+
+      // Agregar evento para cambiar la foto principal al hacer clic en el video
+      videoMiniatura.addEventListener("click", () => {
+          actualizarFormato(rutaImagen,'video');
+      });
+        } else {
+          const imagenMiniatura = document.createElement("img");
+          imagenMiniatura.setAttribute("src", rutaImagen);
+          imagenMiniatura.classList.add('imagenesMiniatura');
+          contenedorMiniaturas.appendChild(imagenMiniatura);
+
+          // Agregar evento para cambiar la foto principal al hacer clic en la imagen
+          imagenMiniatura.addEventListener("click", () => {
+        actualizarFormato(rutaImagen,'img');
+          });
+      }
+  }
+
+
+  // Función para actualizar el elemento principal en la galería
+  function actualizarFormato(src, tipo) {
+    // Remover el elemento anterior si existe
+    if (fotoPrincipal) {
+        fotoPrincipal.remove();
     }
+
+    if (tipo === 'video') {
+        fotoPrincipal = document.createElement('video');
+        fotoPrincipal.setAttribute('controls', '');
+    } else { // 'imagen'
+        fotoPrincipal = document.createElement('img');
+    }
+
+    fotoPrincipal.setAttribute('src', src);
+    fotoPrincipal.classList.add("fotoPrincipalGaleria");
+    contenedorFotoPrincipal.appendChild(fotoPrincipal);
+}
+actualizarFormato("assets/img/images/" + imagenes[0], imagenes[0].endsWith('.mp4') ? 'video' : 'imagen');
+
+}
 });
-
-const fotoPrincipal= document.createElement('img');
-fotoPrincipal.setAttribute('src',"assets/img/images/pic1.png");
-fotoPrincipal.setAttribute('class',"fotoPrincipalGaleria");
-contenedorFotoPrincipal.appendChild(fotoPrincipal);
-
-};

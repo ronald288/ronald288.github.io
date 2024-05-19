@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded",()=>{
+
 const herramientas = [
     {selector:".HTML", descripcion: "HTML, acrónimo en inglés de HyperText Markup Language, hace referencia al lenguaje de marcado utilizado en la creación de páginas web. Este estándar que sirve de referencia del software que interactúa con la elaboración de páginas web en sus diferentes versiones.", claseInfo:"infoHerramientasHtml" },
     {selector:".CSS", descripcion: "CSS, en español «Hojas de estilo en cascada», es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.", claseInfo:"infoHerramientasCss" },
@@ -58,3 +60,5 @@ function botonDeCerrar(cuadroInfo,botonInformacion) {
      crearCuadroInformacion(herramienta.descripcion, herramienta.claseInfo, boxHerramienta, botonInformacion);
      });
   });
+
+});

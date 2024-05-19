@@ -51,22 +51,34 @@ body{
 	max-width: 80vw;
 	background-color: #07053b8e;
 }
+.btnGaleria{
+	position: absolute;
+	border-radius: 10px;
+	border: 0;
+	left: 12.3vw;
+	height: 3vw;
+	width: 9vw;
+	background-color: #fefefefa;
+	font-size: 1.2vw;
+}
+.btnGaleria:hover{
+	border-radius: 10px;
+	font-weight:bold;
+	font-size: 1.3vw;
+}
+.section1-head__img:hover{
+	background-color: #f8fafa67;
+	box-shadow: 0;
+	}
 
 .section1-head__img{
 	border-radius: 10px;
-	box-shadow: 8px 8px 60px rgb(0, 255, 255); 
-	background-color: rgba(166, 169, 184, 0.295);
+	box-shadow: 7px 7px 50px rgb(253, 254, 254); 
 	max-width: 9vw;
-	height: 170px;
-	margin: 2vw 3vw 2vw 3vw;
+	height: 13vw;
+	margin: 4vw 3vw 2vw 3vw;
 	float: left;
 	cursor: pointer;
-}
-
-.section1-head__img:hover{
-	border-radius: 10px;
-	box-shadow: 8px 8px 60px rgb(26, 57, 150); 
-	background-color: rgba(0, 0, 0, 0.295);
 }
 
 h1{
@@ -289,10 +301,6 @@ h1:first-letter{
 
 .fa-envelope{
 	margin-top:16px;
-}
-
-.ultimo + div{
-    visibility:hidden;
 }
 
 

@@ -13,6 +13,8 @@ let contadorIntentos=1;
 let botomReiniciarJuego;
 numero.focus();
 
+enviar.addEventListener('click', RevicionRespuesta);
+
 function RevicionRespuesta(){
 
     // evalua el valor ingresado
@@ -82,5 +84,5 @@ function reiniciarJuego(){
     randomNumber = Math.floor(Math.random()*100)+1;
 }
 
-enviar.addEventListener('click', RevicionRespuesta);
+
 

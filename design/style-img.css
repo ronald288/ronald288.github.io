@@ -73,10 +73,9 @@
 /* diseño de la galeria de fotos (foto principal) */
 
 .contenedorGaleria{
-	padding: 20px;
 	display: flex;
-	width: 1000px;
-	height: 600px;
+	width: 72vw;
+	height: 90vh;
 	position: absolute;
     top: 50%;
     left: 50%;
@@ -86,18 +85,27 @@
 .contenedorMiniaturas{
 	display: flex;
 	flex-direction: column;
-	height:550px;
-	width:250px;
+	margin: auto;
+	height:38vw;
+	width:20vw;
 }
 .imagenesMiniatura{
+	margin: auto;
 	width: 17vw;
-	height: 9.5vw;
-	margin: 5px;
+	height: 11.5vw;
+}
+
+.videoMiniatura{
+	width: 17vw;
+	height: 11.5vw;
+	margin: auto;
+	object-fit: fill;
 }
 
 .fotoPrincipalGaleria{
 	margin: auto;
-	float: left;
 	width: 50vw;
-	height: 40vw;
+	height: 37vw;
+	margin-right: 2vw;
+	object-fit: fill;
 }
