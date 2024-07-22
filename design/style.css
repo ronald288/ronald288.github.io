@@ -207,11 +207,13 @@ h1:first-letter{
 } 
 .botonCerrar{
 	position: absolute;
-	top: 0;
+	top:-6px;
 	right: 0;
-	background-color:unset;
+	font-size: 2vw;
+	font-weight: bold;
 	color: white;
 	cursor: pointer;
+	user-select: none;
 }
 
 /* galeria de proyecto y su seleccion */

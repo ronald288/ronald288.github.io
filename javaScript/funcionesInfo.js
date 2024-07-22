@@ -34,8 +34,8 @@ function crearCuadroInformacion(descripcion,claseInfo,contenedor,botonInformacio
 
 // esta funcion crear los botones de cerrar los cuadros de informacion.
 function botonDeCerrar(cuadroInfo,botonInformacion) {
-  const botonCerrar = document.createElement("button");
-  botonCerrar.innerHTML = "X";
+  const botonCerrar = document.createElement("span");
+  botonCerrar.innerHTML = "&times;";
   botonCerrar.classList.add("botonCerrar");
 
 // cuando le de click encima del botonCerrar se cierre el cuadro de dialogo y se habilite el boton de informacion

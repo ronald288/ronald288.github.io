@@ -5,30 +5,32 @@ eventoGaleria.addEventListener("click", crearGaleria);
 
 function crearGaleria(){
     let fondoNegro = document.createElement("div");
-    fondoNegro.style.backgroundColor ="rgba(0,0,0,0.7)";
-    fondoNegro.style.width = window.innerWidth+"px";
-    fondoNegro.style.height = "335vh";
-    fondoNegro.style.position="absolute";
-    fondoNegro.style.top = 0;
+    fondoNegro.classList.add("fondoGaleria");
     document.body.appendChild(fondoNegro);
 
     const contenedor = document.createElement("div");
     contenedor.classList.add("contenedorGaleria");
-    document.body.appendChild(contenedor);
+    fondoNegro.appendChild(contenedor);
 
     const contenedorMiniaturas = document.createElement("div");
     contenedorMiniaturas.classList.add("contenedorMiniaturas");
     contenedor.appendChild(contenedorMiniaturas);
 
-    const botonCerrar = document.createElement("button");
+    const botonCerrar = document.createElement("span");
     botonCerrar.classList.add("botonCerrar");
-    botonCerrar.textContent = "X";
+    botonCerrar.innerHTML = "&times;";
     contenedor.appendChild(botonCerrar);
 
     botonCerrar.addEventListener("click", () => {
     contenedor.remove();
     fondoNegro.remove();
     });
+
+    fondoNegro.addEventListener("click",(e)=>{
+         if(e.target == fondoNegro){
+         fondoNegro.remove();
+        }
+    })
 
     const contenedorFotoPrincipal = document.createElement("div");
     contenedorFotoPrincipal.classList.add("fotoPrincipalGaleria");
@@ -41,10 +43,9 @@ for (let i = 0; i < imagenes.length; i++) {
   let nombreImagen = imagenes[i];
   let rutaImagen = "assets/img/images/" + nombreImagen;
   if (nombreImagen.endsWith('.mp4')) {
-      const videoMiniatura = document.createElement("video");
-      videoMiniatura.setAttribute("src", rutaImagen);
-      videoMiniatura.setAttribute("controls", true);
+      const videoMiniatura = document.createElement('video');
       videoMiniatura.classList.add('videoMiniatura');
+      videoMiniatura.poster="./assets/img/miniatura.png";
       contenedorMiniaturas.appendChild(videoMiniatura);
 
       // Agregar evento para cambiar la foto principal al hacer clic en el video
@@ -75,6 +76,7 @@ for (let i = 0; i < imagenes.length; i++) {
     if (tipo === 'video') {
         fotoPrincipal = document.createElement('video');
         fotoPrincipal.setAttribute('controls', '');
+        fotoPrincipal.autoplay = "true";
     } else { // 'imagen'
         fotoPrincipal = document.createElement('img');
     }

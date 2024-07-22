@@ -26,17 +26,16 @@ function RevicionRespuesta(){
     }
 
     //muestra la secuencia de datos
-    secuencia.textContent += verificacion + ", ";
+   if (verificacion !== randomNumber)  secuencia.textContent += verificacion + ", "
 
     // comprueba si el numero ingresado corresponde al numero random
     if( verificacion === randomNumber){
         textoDeSalida.textContent = "¡Felicidades! ¡Lo adivinaste!";
-
+        secuencia.textContent += verificacion + ". ";
         consejo.textContent="";
         //llamado a la funcion del fin del juego
         finJuego();
-    }else if (contadorIntentos === 10){
-        secuencia.textContent += verificacion + ". ";
+    }else if (contadorIntentos === 6){
         textoDeSalida.textContent = "¡¡¡Fin del juego!!!";
         consejo.textContent = "";
         finJuego();
