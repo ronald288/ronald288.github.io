@@ -1,49 +1,83 @@
+/* 1 SECCION */
+/* diseño de la galeria de fotos (foto principal) */
+.fondoGaleria{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0,0,0);
+	background-color: rgba(246, 246, 246, 0.532);
+}
+.contenedorGaleria{
+  display: flex;
+  max-width: 71vw;
+  height: 90vh;
+  background-color: rgba(3, 0, 0, 0.914);
+  position: absolute;
+  top: 4%;
+  left: 15%;
+  animation-name: crece;
+  animation-duration: 1s;
+}
+@keyframes crece{
+  from{transform:scale(0);}
+  to{transform: scale(1);}
+}
+
+.contenedorMiniaturas{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height:82vh;
+  width:20vw;
+}
+.imagenesMiniatura{
+  margin: auto;
+  width: 17vw;
+  height: 26vh;
+  margin-bottom: 3vh;
+}
+.videoMiniatura{
+  width:17vw;
+  height: 25vh;
+  margin:auto;
+  object-fit: cover;
+  border: none;
+}
+.fotoPrincipalGaleria{
+  margin: auto;
+  width: 50vw;
+  height: 82vh;
+  margin-right: 1.5vw;
+  object-fit: fill;
+}
+
+/* SECCION 2 LENGUAJES */
+/* boton de informacion */
+.informacion{
+	position: absolute;
+	z-index: 10;
+	background-image: url(../assets/img/info_FILL0_wght100_GRAD0_opsz24.png);
+	background-repeat: no-repeat;
+	height: 5vh;
+	width: 2.5vw;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.informacion:hover{
+	box-shadow: 0 0 15px 10px rgb(3, 193, 246);
+}
+
 .section2-languages__body{
+	position: relative;
+	left: 6vw;
     max-width: 10vw;
-    max-height: 10vw; 
+    max-height: 10vw;
     transform-style: preserve-3d;
     animation: rotate 20s linear infinite;
 }
 
-.html, .css, .javaScript, .photoshop, .starUml{
-	position: relative;
-	left: 6vw;
-}
-
-.contenedorHerramientas{
-	display: inline-block;
-	margin-top: 3vw;
-	position: relative;
-	width: 10vw;
-	height: 6vw;
-}
-
-/* contenedor donde iran los botones de javaScript */
-.HTML{
-	position: relative;
-	top: 7vw;
-	left: 10vw;
-}
-.CSS{
-	position: relative;
-	top: 7vw;
-	left: 30vw;
-}
-.JAVASCRIPT{
-	position: relative;
-	top: 7vw;
-	left: 50vw;
-}
-.PHOTOSHOP{
-	position: relative;
-	top: 27vw;
-	left: 25.5vw;
-}
-.STARUML{
-	position: relative;
-	top: 26vw;
-	left: -15.5vw;
-}
  @keyframes rotate{
 	0%{
 		transform: perspective(1000px) rotatey(0deg);
@@ -51,7 +85,7 @@
 	100%{
 		transform: perspective(1000px) rotatey(360deg);
 	}
-} 
+}
 
 .section2-languages__body span{
     position: absolute;
@@ -66,60 +100,52 @@
 .section2-body__img{
 	width: 10vw;
 	height: 10vw;
-    border: 4px solid rgba(0, 0, 0, 0.801); 
+    border: 4px solid rgba(0, 0, 0, 0.801);
 	background-color: aliceblue;
-}  
-
-/* diseño de la galeria de fotos (foto principal) */
-.fondoGaleria{
-      position: fixed;
-	  top: 0;
-	  right: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgb(0,0,0);
-      background-color: rgba(246, 246, 246, 0.532);
 }
-.contenedorGaleria{
+
+/* carrusel de herramientas */
+.carousel{
+	width: 75%;
+	height: 55vh;
+	margin: auto;
+	margin-bottom: 8.5vw;
+	background-color: rgba(96, 96, 96, 0.529);
+	border: 6px inset rgb(142, 139, 139);
+}
+.containtCarousel{
+	width: 100%;
+	height: 55vh;
 	display: flex;
-	max-width: 71vw;
-	height: 90vh;
-	background-color: rgba(3, 0, 0, 0.914);
+	justify-content: space-around;
+}
+
+hr{
+	margin-top: 4vh;
+	width: .2vw;
+	height: 40vh;
+	background-color: rgb(255, 255, 255);
+	opacity: 1;
+}
+.div1{
+	width: 49%;
+	height: 53vh;
+}
+
+.logosTarjetas{
+	position: relative;
+	top: 2vh;
+	left: 1vw;
+	background-color: rgb(215, 236, 250);
+	border: 4px outset rgb(167, 1, 1);
+	border-radius: 3px;
+}
+
+.lastLogo{
 	position: absolute;
-	top: 4%;
-	left: 15%;
-	animation-name: crece;
-	animation-duration: 1s; 
-}
-@keyframes crece{
-	from{transform:scale(0);}
-	to{transform: scale(1);}
-} 
-
-.contenedorMiniaturas{
-	display: flex;
-	flex-direction: column;
-	margin: auto;
-	height:82vh;
-	width:20vw;
-}
-.imagenesMiniatura{
-	margin: auto;
-	width: 17vw;
-	height: 26vh;
-	margin-bottom: 3vh;
-}
-.videoMiniatura{
-	width:17vw;
-	height: 25vh;
-	margin:auto;
-	object-fit: cover;
-	border: none;
-}
-.fotoPrincipalGaleria{
-	margin: auto;
-	width: 50vw;
-	height: 82vh;
-	margin-right: 1.5vw;
-	object-fit: fill;
+	top: 2vh;
+	left: 1vw;
+	background-color: rgb(252, 252, 252);
+	border: 7px outset rgb(98, 11, 92);
+	border-radius: 3px;
 }

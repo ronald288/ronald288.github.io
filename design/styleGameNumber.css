@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    user-select: none;
 }
 body{
     background-image: url("../assets/img/fondoJuego.jpg");
