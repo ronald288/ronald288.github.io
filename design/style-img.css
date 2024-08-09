@@ -58,15 +58,18 @@
 .informacion{
 	position: absolute;
 	z-index: 10;
-	background-image: url(../assets/img/info_FILL0_wght100_GRAD0_opsz24.png);
+	background-image: url(../assets/img/info.png) ;
+	background-size: cover;
 	background-repeat: no-repeat;
+	background-color: transparent;
 	height: 5vh;
 	width: 2.5vw;
-	border-radius: 50%;
+
 	cursor: pointer;
 }
 .informacion:hover{
-	box-shadow: 0 0 15px 10px rgb(3, 193, 246);
+	box-shadow: 0 0 15px 5px rgb(3, 193, 246);
+	border-radius: 50%;
 }
 
 .section2-languages__body{
@@ -106,46 +109,63 @@
 
 /* carrusel de herramientas */
 .carousel{
-	width: 75%;
-	height: 55vh;
+	max-width: 78vw;
+	height: 60vh;
 	margin: auto;
-	margin-bottom: 8.5vw;
-	background-color: rgba(96, 96, 96, 0.529);
+	margin-bottom: 7vw;
+	background-color: rgba(255, 255, 255, 0.828);
 	border: 6px inset rgb(142, 139, 139);
 }
 .containtCarousel{
 	width: 100%;
 	height: 55vh;
+	padding-top: 2vw;
 	display: flex;
 	justify-content: space-around;
 }
+.carousel-indicators{
+	margin: auto;
+	margin-bottom: 1vw;
+	width: 15%;
+	background-color: rgba(0, 0, 0, 0.518);
+}
 
+.carousel-control-prev-icon:hover,.carousel-control-next-icon:hover{
+	background-color: black;
+	border-radius: 50%;
+}
 hr{
-	margin-top: 4vh;
+	margin-top: 1vh;
 	width: .2vw;
-	height: 40vh;
-	background-color: rgb(255, 255, 255);
+	height: 38vh;
+	background-color: rgb(3, 3, 3);
 	opacity: 1;
 }
 .div1{
 	width: 49%;
-	height: 53vh;
+	height: 41vh;
 }
 
 .logosTarjetas{
-	position: relative;
-	top: 2vh;
-	left: 1vw;
-	background-color: rgb(215, 236, 250);
-	border: 4px outset rgb(167, 1, 1);
+	margin:0 1vw;
+	background-color: rgb(255, 255, 255);
+	padding: 1vw;
 	border-radius: 3px;
+	width:9vw; 
+	height:18vh;
+	float: left;
 }
-
+.textColor{
+	color: black;
+	padding: 0 2vw;
+}
 .lastLogo{
-	position: absolute;
-	top: 2vh;
-	left: 1vw;
+	margin-top: 2vh;
+	margin-left: 1vw;
 	background-color: rgb(252, 252, 252);
-	border: 7px outset rgb(98, 11, 92);
+	border: .6vw outset rgb(98, 11, 92);
 	border-radius: 3px;
+	padding: 1vw;
+	width:25vw; 
+	height:20vh;
 }
