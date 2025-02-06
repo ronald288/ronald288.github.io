@@ -1,5 +1,30 @@
 document.addEventListener("DOMContentLoaded",()=>{
 
+  let iconoCreado = false;
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 100 && !iconoCreado) {
+      let nuevoIcono = document.createElement('button');
+      nuevoIcono.innerHTML = '<i class="fa-solid fa-house"></i>';
+      nuevoIcono.classList.add('fixed');  // Usamos las mismas clases para el estilo
+      document.body.appendChild(nuevoIcono);
+
+      nuevoIcono.addEventListener("click", function () {
+        window.scrollTo(0, 0); // Desplaza la página al inicio
+      });
+      
+      iconoCreado = true;
+    } 
+    else if (window.scrollY <= 100 && iconoCreado) {
+    let nuevoIcono = document.querySelector('.fixed');
+    if (nuevoIcono) {
+      nuevoIcono.remove(); // Eliminar el ícono
+      iconoCreado = false; // Restablecer el estado de creación
+    }
+  }
+  });
+
+
 const containers = document.querySelectorAll(".herramienta");
 const textInfomation= document.querySelector(".textInformation")
 const herramientas = [

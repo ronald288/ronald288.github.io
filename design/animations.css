@@ -1,0 +1,46 @@
+.navigation-li__item:hover{
+	font-size: 1.8vw;
+    transition-duration: 0.8s;
+    transform: scale(1.1);
+}
+
+#likeButton:hover{
+	background: linear-gradient(rgb(23, 91, 169),rgb(0, 0, 0));
+	color: white;
+	padding: 4px 4px;
+	cursor: pointer;
+	border-radius: 5px;
+	opacity:1;
+}
+
+li::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0%;
+	height: 3px; /* Grosor de la línea */
+	background-color: #ffcc00; /* Color de la línea */
+	transition: width 0.3s ease-in-out;
+  }
+  
+  li:hover::after {
+	width: 100%; /* Se expande al hacer hover */
+  }
+
+.fixed {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	transform:translate(0,41.5vw); /* Se mueve a la izquierda */
+	color: #000000;
+	background-color: aliceblue;
+	border-radius: 50%;
+	width: 3vw;
+	height: 3vw;
+	margin: auto;
+	display: flex; /* Usamos Flexbox */
+	align-items: center; /* Centra verticalmente */
+	justify-content: center; /* Centra horizontalmente */
+	padding-left: 2vh;
+  }
