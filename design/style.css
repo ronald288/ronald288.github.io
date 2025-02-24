@@ -16,7 +16,7 @@ body{
 	--color-primario: linear-gradient(rgb(5, 5, 5),rgb(26, 30, 43),rgba(39, 57, 134, 0.808));
 }
 /* BOTON ME GUSTA */
-.LikeContainer{
+/* .LikeContainer{
 	position: fixed;
 	text-align:center;
 	z-index:500;
@@ -50,7 +50,7 @@ body{
 	cursor: pointer;
 	border-radius: 5px;
 	opacity: 1;
-  }
+  } */
 /* CABEZERA */
 
 .header-navigation{
@@ -90,12 +90,16 @@ body{
 
 /* SECCION 1 QUIEN SOY*/
 #section1{
+	border-radius: 20px;
+	outline: 5px outset rgba(5, 5, 5, 0.089);
+    outline-offset: -5px;
+  	box-shadow: 1px 1px 15px 15px rgba(5, 8, 20, 0.863);
 	margin: auto;
-	padding-bottom: 5vh;
 	margin-top:9vw;
 	max-width: 80vw;
-	background: var(--color-primario);
+	background: linear-gradient(rgba(5, 5, 5, 0.73) 20%,rgb(26, 30, 43),rgba(39, 57, 134, 0.808));
 	margin-bottom: 10vw;
+	padding-bottom: 5vh;
 }
 
 .btnGaleria{
